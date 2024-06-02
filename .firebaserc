@@ -1,9 +1,0 @@
-{
-  "projects": {
-    "staging": "reallythinks-nee",
-    "default": "reallythinks-nee"
-  },
-  "targets": {},
-  "etags": {},
-  "dataconnectEmulatorConfig": {}
-}
