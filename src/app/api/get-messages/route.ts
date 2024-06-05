@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import getServerSession from "next-auth";
-import { authOptions } from "../auth/[...nextauth].ts/options";
+import { AuthOptions } from "../auth/[...nextauth].ts/options";
 import dbConnect from "@/lib/dbConnect";
 import UserModel from "@/model/user";
 import { User } from "next-auth";
@@ -9,7 +9,7 @@ import mongoose from "mongoose";
 export async function GET(request: Request) {
     await dbConnect();
 
-    const session = await getServerSession(authOptions);
+    const session = await getServerSession(AuthOptions);
     
     if (!session || !session.user) {
         return NextResponse.json(

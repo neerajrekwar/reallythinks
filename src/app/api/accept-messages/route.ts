@@ -1,5 +1,5 @@
 import getServerSession from 'next-auth';
-import { authOptions } from '../auth/[...nextauth].ts/options';
+import { AuthOptions } from '../auth/[...nextauth].ts/options';
 import dbConnect from '@/lib/dbConnect';
 import UserModel from '@/model/user';
 import { User } from 'next-auth';
@@ -9,7 +9,7 @@ export async function POST(request: Request) {
     // Connect to the database
     await dbConnect();
 
-    const session = await getServerSession(authOptions);
+    const session = await getServerSession(AuthOptions);
     const user: User = session?.user as User;
     if (!session || !session.user) {
         return Response.json(
@@ -64,7 +64,7 @@ export async function GET(request: Request) {
     await dbConnect();
 
     // Get the user session
-    const  session = await getServerSession(authOptions);
+    const  session = await getServerSession(AuthOptions);
     const user: User = session?.user as User;
 
     // Check if the user is authenticated
