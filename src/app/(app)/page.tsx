@@ -12,8 +12,6 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from '@/components/ui/carousel';
 
 export default function Home() {
@@ -65,3 +63,5 @@ export default function Home() {
     </>
   );
 }
+
+>>>>>>> a5c33c1d2eda7cd8bfbb1974a42ab1cdb1fa3e52
